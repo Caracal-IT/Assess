@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{203B3AF5-4036-43B6-AE0C-89BA0F9DE1B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D6A5F985-3A2D-4284-B66C-C258ABEECE00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caracal.Assess.Api", "src\Caracal.Assess.Api\Caracal.Assess.Api.csproj", "{61131B87-3331-4A5D-BC83-4BB392969C27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caracal.Assess.Application", "src\Caracal.Assess.Application\Caracal.Assess.Application.csproj", "{C4A396DF-0B08-478C-A095-A059707790D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caracal.Core", "src\Caracal.Core\Caracal.Core.csproj", "{CBAFC8D3-63B6-4AD3-9507-8CF1228ADD22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caracal.Assess.Data", "src\Caracal.Assess.Data\Caracal.Assess.Data.csproj", "{C5868168-F8AE-427D-B284-6890771D9108}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caracal.Assess.Application.Tests.Unit", "test\Caracal.Assess.Application.Tests.Unit\Caracal.Assess.Application.Tests.Unit.csproj", "{170BBE14-8B67-449F-A0CD-6709336D0AA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{61131B87-3331-4A5D-BC83-4BB392969C27} = {203B3AF5-4036-43B6-AE0C-89BA0F9DE1B5}
+		{C4A396DF-0B08-478C-A095-A059707790D8} = {203B3AF5-4036-43B6-AE0C-89BA0F9DE1B5}
+		{CBAFC8D3-63B6-4AD3-9507-8CF1228ADD22} = {203B3AF5-4036-43B6-AE0C-89BA0F9DE1B5}
+		{C5868168-F8AE-427D-B284-6890771D9108} = {203B3AF5-4036-43B6-AE0C-89BA0F9DE1B5}
+		{170BBE14-8B67-449F-A0CD-6709336D0AA3} = {D6A5F985-3A2D-4284-B66C-C258ABEECE00}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61131B87-3331-4A5D-BC83-4BB392969C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61131B87-3331-4A5D-BC83-4BB392969C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61131B87-3331-4A5D-BC83-4BB392969C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61131B87-3331-4A5D-BC83-4BB392969C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4A396DF-0B08-478C-A095-A059707790D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4A396DF-0B08-478C-A095-A059707790D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4A396DF-0B08-478C-A095-A059707790D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4A396DF-0B08-478C-A095-A059707790D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBAFC8D3-63B6-4AD3-9507-8CF1228ADD22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBAFC8D3-63B6-4AD3-9507-8CF1228ADD22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBAFC8D3-63B6-4AD3-9507-8CF1228ADD22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBAFC8D3-63B6-4AD3-9507-8CF1228ADD22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5868168-F8AE-427D-B284-6890771D9108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5868168-F8AE-427D-B284-6890771D9108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5868168-F8AE-427D-B284-6890771D9108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5868168-F8AE-427D-B284-6890771D9108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{170BBE14-8B67-449F-A0CD-6709336D0AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{170BBE14-8B67-449F-A0CD-6709336D0AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{170BBE14-8B67-449F-A0CD-6709336D0AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{170BBE14-8B67-449F-A0CD-6709336D0AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
