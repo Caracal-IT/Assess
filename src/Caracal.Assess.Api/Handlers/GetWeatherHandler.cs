@@ -13,5 +13,4 @@ public static class GetWeatherHandler {
           TemperatureC = forecast.TemperatureInKelvin - 273,
           Summary = forecast.Summary
         });
-  
 }
