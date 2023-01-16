@@ -4,6 +4,8 @@ using Duende.IdentityServer.Test;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddRazorPages();
+
 var identityServer = builder.Services.AddIdentityServer(options =>
 {
     options.Events.RaiseErrorEvents = true;
@@ -28,7 +30,14 @@ app.UseIdentityServer();
 // /.well-known/openid-configuration
 
 // Github: https://github.com/kevinrjones/SettingUpIdentityServer
+// UI    : https://Github.com/DuendeSoftware/IdentityServer.Quickstart.ui
 
-app.MapGet("/", () => "Hello World!");
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthorization();
+    
+app.MapRazorPages()
+   .RequireAuthorization();
+
 
 app.Run();

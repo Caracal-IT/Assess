@@ -1,0 +1,19 @@
+﻿@model List<Caracal.Assess.Mvc.Models.WeatherData>
+
+@{
+    ViewData["Title"] = "Weather Data";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Date</td>
+            <td>@item.Summary</td>
+            <td>@item.TemperatureF</td>
+            <td>@item.TemperatureC</td>
+        </tr>
+    }
+</table>

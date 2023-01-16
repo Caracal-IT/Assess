@@ -121,7 +121,8 @@ public static class Config
           AllowOfflineAccess = true,
           AllowedScopes = {"openid", "profile", "weatherapi.read"},
           RequirePkce = true,
-          RequireConsent = true,
+          // RequireConsent = true,
+          RequireConsent = false,
           AllowPlainTextPkce = false
         },
       };
