@@ -4,13 +4,24 @@ using Caracal.Assess.Application.Repositories;
 using Caracal.Assess.Application.Services;
 using Caracal.Assess.Application.UseCases;
 using Caracal.Assess.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddAuthorization();
+builder.Services
+       .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+       .AddJwtBearer(options =>
+       {
+           options.Authority = "https://localhost:5443";
+           options.Audience = "weatherapi";
+
+           options.TokenValidationParameters.ValidTypes = new[] { "at+jwt" };
+       });
+
+builder.Services.AddAuthorization();
 
 // Dependency Injection for now
 builder.Services.AddSingleton<IGetWeatherForecastUseCase, GetWeatherForecastUseCase>();
@@ -26,11 +37,14 @@ if (app.Environment.IsDevelopment()) {
 }
 
 app.UseHttpsRedirection();
-//app.UseAuthorization();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapGet("/weatherforecast", GetWeatherHandler.Handle())
    .Produces<IEnumerable<WeatherForecastViewModel>>()
    .WithName("GetWeatherForecast")
+   .RequireAuthorization()
    .WithOpenApi();
 
 app.Run();
