@@ -30,14 +30,14 @@ public class HomeController : Controller
         return View();
     }
 
-    [Authorize()]
+    [Authorize]
     public async Task<IActionResult> Weather()
     {
         using var client = new HttpClient();
         
         //var token = await _tokenService.GetToken("weatherapi.read");
         //client.SetBearerToken(token.AccessToken);
-        var aa = HttpContext.User.IsInRole("weatherapiRead");
+        //var aa = HttpContext.User.IsInRole("weatherapiRead");
         var token = await HttpContext.GetTokenAsync("access_token");
         client.SetBearerToken(token);
 

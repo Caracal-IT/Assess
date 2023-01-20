@@ -23,11 +23,11 @@ builder.Services.AddAuthentication(options =>
         options.ClientId = builder.Configuration["InteractiveServiceSettings:ClientId"];
         options.ClientSecret = builder.Configuration["InteractiveServiceSettings:ClientSecret"];
         
-        options.Scope.Clear();
-        options.Scope.Add("openid");
-        options.Scope.Add("profile");
-        options.Scope.Add("roles");
-        //options.Scope.Add(builder.Configuration["InteractiveServiceSettings:Scopes:0"]);
+        //options.Scope.Clear();
+        //options.Scope.Add("openid");
+        //options.Scope.Add("profile");
+        //options.Scope.Add("roles");
+        options.Scope.Add(builder.Configuration["InteractiveServiceSettings:Scopes:0"]!);
 
         options.ClaimActions.MapJsonKey("role", "role", "role");
         
