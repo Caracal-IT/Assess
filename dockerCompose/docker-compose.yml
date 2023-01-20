@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  web:
+    build:
+      context: ..
+      args:
+        - NODE_ENV=local
+        - ASPNETCORE_ENVIRONMENT=Release
+      dockerfile: src/Caracal.SpringBoot.Web/Dockerfile
+    ports:
+      - "7070:80"
+      - "7171:443"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      ASPNETCORE_ENVIRONMENT: Release
+    networks:
+      - springboot-network
+
+networks:
+  springboot-network:
+    name: springboot-network
+    driver: bridge
+
+volumes:
+  cache:
+    driver: local
