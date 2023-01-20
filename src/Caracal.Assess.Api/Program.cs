@@ -44,7 +44,8 @@ app.UseAuthorization();
 app.MapGet("/weatherforecast", GetWeatherHandler.Handle())
    .Produces<IEnumerable<WeatherForecastViewModel>>()
    .WithName("GetWeatherForecast")
-   .RequireAuthorization()
+   .RequireAuthorization(policy => policy.RequireClaim("scope", "weatherapi.read"))
+   //.RequireAuthorization()
    .WithOpenApi();
 
 app.Run();

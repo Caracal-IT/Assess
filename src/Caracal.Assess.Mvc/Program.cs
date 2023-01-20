@@ -1,4 +1,7 @@
+using System.IdentityModel.Tokens.Jwt;
 using Caracal.Assess.Mvc.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.Configure<IdentityServerSettings>(builder.Configuration.GetSection("IdentityServerSettings"));
 builder.Services.AddSingleton<ITokenService, TokenService>();
+
+JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
 builder.Services.AddAuthentication(options =>
 {
@@ -17,13 +22,22 @@ builder.Services.AddAuthentication(options =>
         options.Authority = builder.Configuration["InteractiveServiceSettings:AuthorityUrl"];
         options.ClientId = builder.Configuration["InteractiveServiceSettings:ClientId"];
         options.ClientSecret = builder.Configuration["InteractiveServiceSettings:ClientSecret"];
-        options.Scope.Add(builder.Configuration["InteractiveServiceSettings:Scopes:0"]);
+        
+        options.Scope.Clear();
+        options.Scope.Add("openid");
+        options.Scope.Add("profile");
+        options.Scope.Add("roles");
+        //options.Scope.Add(builder.Configuration["InteractiveServiceSettings:Scopes:0"]);
 
-        options.ResponseType = "code";
+        options.ClaimActions.MapJsonKey("role", "role", "role");
+        
+        options.GetClaimsFromUserInfoEndpoint = true;
+        options.ResponseType = OpenIdConnectResponseType.Code;
         options.UsePkce = true;
-        options.ResponseMode = "query";
+        options.ResponseMode = OpenIdConnectResponseMode.Query;
         options.SaveTokens = true;
     });
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 

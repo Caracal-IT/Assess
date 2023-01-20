@@ -113,13 +113,14 @@ public static class Config
           ClientSecrets = {new Secret("SuperSecretPassword".Sha256())},
 
           AllowedGrantTypes = GrantTypes.Code,
+          AlwaysSendClientClaims = true,
 
           RedirectUris = {"https://localhost:5444/signin-oidc"},
           FrontChannelLogoutUri = "https://localhost:5444/signout-oidc",
           PostLogoutRedirectUris = {"https://localhost:5444/signout-callback-oidc"},
 
           AllowOfflineAccess = true,
-          AllowedScopes = {"openid", "profile", "weatherapi.read"},
+          AllowedScopes = {"openid", "profile", "role", "weatherapi.read"},
           RequirePkce = true,
           // RequireConsent = true,
           RequireConsent = false,
