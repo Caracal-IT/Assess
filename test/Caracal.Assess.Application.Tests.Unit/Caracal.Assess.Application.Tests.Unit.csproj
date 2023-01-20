@@ -24,7 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\Caracal.Assess.Application\Caracal.Assess.Application.csproj" />
+      <ProjectReference Include="..\..\src\libs\Caracal.Assess.Application\Caracal.Assess.Application.csproj" />
     </ItemGroup>
 
 </Project>

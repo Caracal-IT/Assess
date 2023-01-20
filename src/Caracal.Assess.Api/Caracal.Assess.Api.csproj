@@ -20,8 +20,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Caracal.Assess.Application\Caracal.Assess.Application.csproj" />
-      <ProjectReference Include="..\Caracal.Assess.Data\Caracal.Assess.Data.csproj" />
+      <ProjectReference Include="..\libs\Caracal.Assess.Application\Caracal.Assess.Application.csproj" />
+      <ProjectReference Include="..\libs\Caracal.Assess.Data\Caracal.Assess.Data.csproj" />
+      <ProjectReference Include="..\libs\Caracal.Core\Caracal.Core.csproj" />
     </ItemGroup>
 
 </Project>

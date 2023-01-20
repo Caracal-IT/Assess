@@ -4,6 +4,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{203B3AF5-403
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D6A5F985-3A2D-4284-B66C-C258ABEECE00}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "dockerCompose\docker-compose.dcproj", "{C89AF81C-96BB-46F2-B0BE-6CDA86B7FA74}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caracal.Assess.Api", "src\Caracal.Assess.Api\Caracal.Assess.Api.csproj", "{61131B87-3331-4A5D-BC83-4BB392969C27}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caracal.Assess.Application", "src\libs\Caracal.Assess.Application\Caracal.Assess.Application.csproj", "{C4A396DF-0B08-478C-A095-A059707790D8}"

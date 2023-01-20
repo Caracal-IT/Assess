@@ -1,9 +1,8 @@
 ﻿namespace Caracal.Assess.Mvc.Services;
 
-public class IdentityServerSettings
-{
-    public string DiscoveryUrl { get; set; }
-    public string ClientName { get; set; }
-    public string ClientPassword { get; set; }
+public class IdentityServerSettings {
+    public string DiscoveryUrl { get; set; } = default!;
+    public string ClientName { get; set; } = default!;
+    public string ClientPassword { get; set; } = default!;
     public bool UseHttps { get; set; }
 }
