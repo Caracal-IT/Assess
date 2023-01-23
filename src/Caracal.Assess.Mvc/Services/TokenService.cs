@@ -11,17 +11,19 @@ public class TokenService: ITokenService
 
     public TokenService(ILogger<TokenService> logger, IOptions<IdentityServerSettings> identityServerSettings)
     {
-        _logger = logger;
-        _identityServerSettings = identityServerSettings;
+        try {
+            _logger = logger;
+            _identityServerSettings = identityServerSettings;
 
-        using var httpClient = new HttpClient();
-        _discoveryDocument = httpClient.GetDiscoveryDocumentAsync(identityServerSettings.Value.DiscoveryUrl).Result;
+            using var httpClient = new HttpClient();
+            _discoveryDocument = httpClient.GetDiscoveryDocumentAsync(identityServerSettings.Value.DiscoveryUrl).Result;
 
-        if (_discoveryDocument.IsError)
-        {
-            logger.LogError($"Unable to get discovery document. Error is {_discoveryDocument.Error}");
-            throw new Exception("Unable to get discovery document", _discoveryDocument.Exception);
+            if (_discoveryDocument.IsError) {
+                logger.LogError($"Unable to get discovery document. Error is {_discoveryDocument.Error}");
+                throw new Exception("Unable to get discovery document", _discoveryDocument.Exception);
+            }
         }
+        catch { }
     }
     
     public async Task<TokenResponse> GetToken(string scope)
