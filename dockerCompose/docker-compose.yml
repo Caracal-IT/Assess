@@ -14,9 +14,14 @@ services:
       - ASPNETCORE_URLS=https://+:443;http://+:80
       - ASPNETCORE_HTTPS_PORT=5151
       - ASPNETCORE_Kestrel__Certificates__Default__Password=password1
-      - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/https/dockerdemo.pfx
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/https/caracal.pfx
       
   # https://msol.io/blog/tech/create-a-self-signed-ssl-certificate-with-openssl/
   # https://help.hcltechsw.com/appscan/ADAC/9.0.3/en-US/t_ConvertthepfxCertificatetopemFormat068.html
   # openssl pkcs12 -inkey key.pem -in certificate.pem -export -out certificate.pfx
   # openssl pkcs12 -inkey bob_key.pem -in bob_cert.cert -export -out bob_pfx.pfx
+  
+  
+  
+  # https://docs.docker.com/engine/security/certificates/
+  # https://mohitgoyal.co/2018/09/25/use-ssl-certificates-for-dotnet-core-application-in-docker-containers/
