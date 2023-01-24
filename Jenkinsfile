@@ -10,7 +10,7 @@ pipeline {
         
         stage('Build 2') {
             steps {
-                docker-compose -f dockerCompose/docker-compose.yml build
+                sh 'docker-compose -f dockerCompose/docker-compose.yml build'
             }
         }
     }
