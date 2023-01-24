@@ -8,9 +8,9 @@ pipeline {
             }
         }
         
-        stage('Build') {
+        stage('Build 2') {
             steps {
-                echo "Testing Build World!"
+                docker-compose -f dockerCompose/docker-compose.yml build
             }
         }
     }
