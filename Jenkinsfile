@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage('Clone sources') {
             steps {
-                git branch: 'main',
+                git branch: '${branch}',
                        url: 'https://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@github.com/Caracal-IT/Assess.git'
             }
         }
         
         stage('Build') {
             steps {
-                echo "Testing Build World!"
+                echo "Testing Build World 2!"
             }
         }
     }
