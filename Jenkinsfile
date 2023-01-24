@@ -26,7 +26,7 @@ pipeline {
         stage('Push') {
 
             steps {
-                sh 'docker push divigraph/assess_mvc:v4'
+                sh 'docker push divigraph/assess_mvc:v5'
             }
         }
          stage('Push') {
