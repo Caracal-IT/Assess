@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker-compose -f dockerCompose/docker-compose.yml build'
-                sh 'docker tag docker.io/divigraph/assess_mvc:v2 divigraph/assess_mvc:v3'
+                sh 'docker tag docker.io/divigraph/assess_mvc:latest divigraph/assess_mvc:v4'
             }
         }
         
@@ -26,7 +26,7 @@ pipeline {
         stage('Push') {
 
             steps {
-                sh 'docker push divigraph/assess_mvc:v3'
+                sh 'docker push divigraph/assess_mvc:v4'
             }
         }
     }
