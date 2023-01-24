@@ -1,6 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{203B3AF5-4036-43B6-AE0C-89BA0F9DE1B5}"
+	ProjectSection(SolutionItems) = preProject
+		Jenkinsfile = Jenkinsfile
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D6A5F985-3A2D-4284-B66C-C258ABEECE00}"
 EndProject
