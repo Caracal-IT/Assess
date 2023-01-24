@@ -18,5 +18,5 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 COPY ["src/Caracal.Assess.Mvc/certs/dockerdemo.pfx", "https/dockerdemo.pfx"]
-COPY src/Caracal.Assess.Mvc/certs/caracal.pfx ./https/caracal.pfx
+
 ENTRYPOINT ["dotnet", "Caracal.Assess.Mvc.dll"]
