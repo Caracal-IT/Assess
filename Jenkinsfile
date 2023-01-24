@@ -29,5 +29,11 @@ pipeline {
                 sh 'docker push divigraph/assess_mvc:v4'
             }
         }
+         stage('Push') {
+        
+            steps {
+                sh 'docker image prune'
+            }
+         }
     }
 }
