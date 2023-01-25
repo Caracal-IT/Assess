@@ -20,11 +20,11 @@ pipeline {
         
         stage('Test') {
             steps {
-                sh 'docker-compose -f dockerCompose/docker-compose.yml run unittests cd code& cd & test & ls'
+                sh 'docker-compose -f dockerCompose/docker-compose.yml run unittests cd code & ls & cd test & ls'
                 sh 'docker-compose -f dockerCompose/docker-compose.yml run unittests dotnet test code/test/Caracal.Assess.Application.Tests.Unit/Caracal.Assess.Application.Tests.Unit.csproj'
             }
         }
-        
+        /*
         stage('Login') {
             steps {
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
