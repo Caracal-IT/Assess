@@ -20,7 +20,7 @@ services:
   unittests:
     image: mcr.microsoft.com/dotnet/sdk:7.0
     volumes:
-      -  /var/jenkins_home/workspace/assess-build-pipeline/:/code
+      -  ../test:/code
       
       
         # https://msol.io/blog/tech/create-a-self-signed-ssl-certificate-with-openssl/
