@@ -16,5 +16,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".dockerignore" />
+    <Content Include="dev.env" />
   </ItemGroup>
 </Project>
