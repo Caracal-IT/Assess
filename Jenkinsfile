@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
     	DOCKERHUB_CREDENTIALS=credentials('7d1fe5fe-ee76-43d9-a063-1e382b116917')
+    	VERSION='v9'
     }
     stages {
         stage('Clone sources') {
@@ -14,7 +15,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker-compose -f dockerCompose/docker-compose.yml build'
-                sh 'docker tag docker.io/divigraph/assess_mvc:latest divigraph/assess_mvc:v8'
+                echo 'docker tag docker.io/divigraph/assess_mvc:latest divigraph/assess_mvc:$VERSION'
             }
         }
         
@@ -26,13 +27,13 @@ pipeline {
         stage('Push') {
 
             steps {
-                sh 'docker push divigraph/assess_mvc:v8'
+                sh 'docker push divigraph/assess_mvc:$VERSION'
             }
         }
          stage('Cleanup') {
         
             steps {
-                sh 'docker image prune -f'
+                sh 'docker image rm divigraph/assess_mvc:$VERSION'
             }
          }
     }

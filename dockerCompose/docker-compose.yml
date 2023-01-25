@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   web:
-    image: divigraph/assess_mvc:latest
+    image: divigraph/assess_mvc:${VERSION}
     build:
       context: ..
       args:
