@@ -20,7 +20,7 @@ pipeline {
         
         stage('Test') {
             steps {
-                sh 'docker-compose -f dockerCompose/docker-compose.yml run unittests cd code & ls'
+                sh 'docker-compose -f dockerCompose/docker-compose.yml run unittests cd code/test & ls'
                 sh 'docker-compose -f dockerCompose/docker-compose.yml run unittests dotnet test code/test/Caracal.Assess.Application.Tests.Unit/Caracal.Assess.Application.Tests.Unit.csproj'
             }
         }
