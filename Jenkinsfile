@@ -21,7 +21,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'pwd'
-                sh 'docker-compose -f dockerCompose/docker-compose.yml  run -it unittests dotnet test /code/test/Caracal.Assess.Application.Tests.Unit/Caracal.Assess.Application.Tests.Unit.csproj'                                                                                                                                                 
+                docker-compose -f dockerCompose/docker-compose.yml  run -it unittests dotnet test code/test/Caracal.Assess.Application.Tests.Unit/Caracal.Assess.Application.Tests.Unit.csproj                                                                                                                                                
             }
         }
         /*
