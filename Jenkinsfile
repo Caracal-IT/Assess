@@ -11,17 +11,17 @@ pipeline {
                        url: 'https://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@github.com/Caracal-IT/Assess.git'
             }
         }
-        
+        /*
         stage('Build') {
             steps {
                 sh 'docker-compose -f dockerCompose/docker-compose.yml build web'
             }
         }
-        
+        */
         stage('Test') {
             steps {
                 sh 'docker-compose -f dockerCompose/docker-compose.yml run unittests cd code & ls & cd test & ls'
-                sh 'docker-compose -f dockerCompose/docker-compose.yml run unittests dotnet test ./code/test/Caracal.Assess.Application.Tests.Unit/Caracal.Assess.Application.Tests.Unit.csproj'                                                                                                                                                 
+                sh 'docker-compose -f dockerCompose/docker-compose.yml run unittests dotnet test code/test/Caracal.Assess.Application.Tests.Unit/Caracal.Assess.Application.Tests.Unit.csproj'                                                                                                                                                 
             }
         }
         /*
