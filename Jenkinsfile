@@ -26,10 +26,10 @@ pipeline {
         stage('Push') {
 
             steps {
-                sh 'docker push divigraph/assess_mvc:v5'
+                sh 'docker push divigraph/assess_mvc:v6'
             }
         }
-         stage('Push') {
+         stage('Cleanup') {
         
             steps {
                 sh 'docker image prune'
