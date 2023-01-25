@@ -2,12 +2,12 @@ pipeline {
     agent any
     environment {
     	DOCKERHUB_CREDENTIALS=credentials('7d1fe5fe-ee76-43d9-a063-1e382b116917')
-    	VERSION='v12'
+    	VERSION='v13'
     }
     stages {
         stage('Clone sources') {
             steps {
-                echo "The current build number is ${env.VERSION}"
+                echo "The current build number is ${env.VERSION}, ${env.BUILD_NUMBER}"
                 git branch: 'main',
                        url: 'https://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@github.com/Caracal-IT/Assess.git'
             }
