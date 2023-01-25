@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
     	DOCKERHUB_CREDENTIALS=credentials('7d1fe5fe-ee76-43d9-a063-1e382b116917')
-    	VERSION='v11'
+    	VERSION='v12'
     }
     stages {
         stage('Clone sources') {
