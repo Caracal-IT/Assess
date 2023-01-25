@@ -2,12 +2,11 @@ pipeline {
     agent any
     environment {
     	DOCKERHUB_CREDENTIALS=credentials('7d1fe5fe-ee76-43d9-a063-1e382b116917')
-    	VERSION='v9'
+    	VERSION='v10'
     }
     stages {
         stage('Clone sources') {
             steps {
-                echo "The current build number is ${env.VERSION}"
                 git branch: 'main',
                        url: 'https://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@github.com/Caracal-IT/Assess.git'
             }
@@ -16,7 +15,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'docker-compose -f dockerCompose/docker-compose.yml build'
-                echo 'docker tag docker.io/divigraph/assess_mvc:latest divigraph/assess_mvc:$VERSION'
             }
         }
         
