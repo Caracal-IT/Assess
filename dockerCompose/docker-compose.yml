@@ -17,11 +17,6 @@ services:
       - ASPNETCORE_Kestrel__Certificates__Default__Password=password1
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/app/https/dockerdemo.pfx
       
-  unittests:
-    image: mcr.microsoft.com/dotnet/sdk:7.0
-    volumes:
-      -  ..:/code
-      
       
         # https://msol.io/blog/tech/create-a-self-signed-ssl-certificate-with-openssl/
   # https://help.hcltechsw.com/appscan/ADAC/9.0.3/en-US/t_ConvertthepfxCertificatetopemFormat068.html
