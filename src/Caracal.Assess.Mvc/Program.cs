@@ -1,6 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using Caracal.Assess.Mvc.Services;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,7 +17,8 @@ builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = "cookie";
     options.DefaultChallengeScheme = "oidc";
-}).AddCookie("cookie")
+})
+    .AddCookie("cookie")
     .AddOpenIdConnect("oidc", options =>
     {
         options.Authority = builder.Configuration["InteractiveServiceSettings:AuthorityUrl"];

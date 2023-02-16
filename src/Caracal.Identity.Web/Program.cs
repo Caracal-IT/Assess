@@ -1,6 +1,4 @@
 using Caracal.Identity.Web.Data;
-using Duende.IdentityServer.Models;
-using Duende.IdentityServer.Test;
 
 var builder = WebApplication.CreateBuilder(args);
 
